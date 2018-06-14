@@ -10,6 +10,8 @@ import java.util.ArrayList;
 public class Registro {
     
     private ArrayList<Producto> lista = new ArrayList();
+    
+    double pStock;
 
     private int maxPorciento, minPorciento;
     
@@ -87,12 +89,19 @@ public class Registro {
     
         Producto p = buscar(nombre);
         
-        if( p.getPorcMax() >= p.getStock() * 100 / p.getInvMaximo() )
+        pStock = p.getStock() * 100 / p.getInvMaximo();
+        
+        //Activa el maximo
+        if( pStock >= p.getPorcMax()   )
             p.setDictamen(false);
         
-        if( p.getPorcMin() <= p.getStock() * 100 / p.getInvMaximo() )
+        //Activa el minimo
+        if( pStock  <= p.getPorcMin() )
             p.setDictamen(true);
         
+        //Activa el null
+        if( pStock >= p.getPorcMin() &&  pStock <= p.getPorcMax())
+            p.setDictamen(null);
     }
     
     /**

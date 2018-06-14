@@ -18,7 +18,7 @@ public class Producto {
     private int invMinimo = 0;
     private double porcMax;
     private double porcMin;
-    private boolean dictamen;
+    private Boolean dictamen;
     
     /**
     *Método constructor parametrizado
@@ -93,7 +93,7 @@ public class Producto {
      * Metodo que regresa el estado del dictamen
      * @return dictamen Estado del dictamen para determinar el producto alto o bajo
      */
-    public boolean isDictamen() {
+    public Boolean isDictamen() {
         return dictamen;
     }
 
@@ -101,7 +101,7 @@ public class Producto {
      * Metodo para establecer el estado del dictamen
      * @param dictamen Estado del dictamen para determinar el producto alto o bajo
      */
-    public void setDictamen(boolean dictamen) {
+    public void setDictamen(Boolean dictamen) {
         this.dictamen = dictamen;
     }
 

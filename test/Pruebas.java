@@ -119,7 +119,20 @@ public class Pruebas {
         //Tengo producto bajo
         System.out.println(p2.isDictamen());
         System.out.println( "Tengo " +p2.getStock() +" de un maximo permitido de " +p2.getInvMaximo() +", osea un "+p2.getStock() * 100 / p2.getInvMaximo()+"%" );
-        assertFalse(p2.isDictamen()); 
+        assertTrue(p2.isDictamen()); 
+        
+        //Actualizo mi stock de sabritas a 50%, osea 25 productos
+        p2.setStock(25);
+        
+        //Activar mi dictamen de producto , debe establecerse null.
+        r.regla("Sabritas");
+        
+        //Tengo producto null
+        System.out.println(p2.isDictamen());
+        
+        
+        System.out.println( "Tengo " +p2.getStock() +" de un maximo permitido de " +p2.getInvMaximo() +", osea un "+p2.getStock() * 100 / p2.getInvMaximo()+"%" );
+        
     }
     
 }
