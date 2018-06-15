@@ -32,6 +32,7 @@ public class Pruebas {
         //Aniadimos un nuevo producto al registro
         r.nuevoProducto(p);
         
+        System.out.println("El porcentaje de Gerber es "+p.getpStock());
         //Decimos que tenemos una registro de tamanio 1
         assertEquals(1,r.getLista().size() );
         
@@ -133,6 +134,7 @@ public class Pruebas {
         
         System.out.println( "Tengo " +p2.getStock() +" de un maximo permitido de " +p2.getInvMaximo() +", osea un "+p2.getStock() * 100 / p2.getInvMaximo()+"%" );
         
+        System.out.println(p2.getStock()+"");
     }
     
 }

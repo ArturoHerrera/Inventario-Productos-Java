@@ -19,6 +19,9 @@ public class Producto {
     private double porcMax;
     private double porcMin;
     private Boolean dictamen;
+    private double pStock;
+
+    
     
     /**
     *Método constructor parametrizado
@@ -55,6 +58,15 @@ public class Producto {
         this.invMinimo = 0;
         this.porcMax = porcMax;
         this.porcMin = porcMin;
+    }
+    
+    public double getpStock() {
+        setpStock(pStock);
+        return pStock;
+    }
+
+    public void setpStock(double pStock) {
+        this.pStock = getStock() * 100 / getInvMaximo();
     }
     
     /**

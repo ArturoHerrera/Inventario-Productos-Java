@@ -89,18 +89,18 @@ public class Registro {
     
         Producto p = buscar(nombre);
         
-        pStock = p.getStock() * 100 / p.getInvMaximo();
+//        pStock = p.getStock() * 100 / p.getInvMaximo();
         
         //Activa el maximo
-        if( pStock >= p.getPorcMax()   )
+        if( p.getpStock() >= p.getPorcMax()   )
             p.setDictamen(false);
         
         //Activa el minimo
-        if( pStock  <= p.getPorcMin() )
+        if( p.getpStock()  <= p.getPorcMin() )
             p.setDictamen(true);
         
         //Activa el null
-        if( pStock >= p.getPorcMin() &&  pStock <= p.getPorcMax())
+        if( p.getpStock() >= p.getPorcMin() &&  pStock <= p.getPorcMax())
             p.setDictamen(null);
     }
     
